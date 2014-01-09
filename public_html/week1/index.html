@@ -61,11 +61,24 @@ and open the template in the editor.
             switch (n) {
                 case 1:
                 case 2:
+                case "checkforme":
+                case true:
                   console.log("if n equals 1 or 2");
                   break;
                 default:
                   console.log("if n equals anything else");
             }
+            
+            var type = "email";
+            switch ( type ) {
+                case "email":
+                    console.log("validate email");
+                break;                   
+                case "fname":
+                    console.log("validate fname");
+                break;
+            }
+            
 
             
         </script>
