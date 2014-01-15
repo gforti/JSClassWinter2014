@@ -9,6 +9,24 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        
+        <style type="text/css">
+            
+            .errorMsg {
+                color: red;
+                border: 1px solid blue;
+                border-radius: 10px;
+            }
+            
+            .validMsg {
+                color: green;
+                border: 1px solid blue;
+                border-radius: 10px;
+                
+            }
+            
+         </style>   
+        
     </head>
     <body>
         <div id="content">TODO write content</div>
@@ -19,12 +37,46 @@ and open the template in the editor.
             <input name="email" id="email" value="" placeholder="sample@email.com" />
             
             <br />
-            <input type="submit" value="Submit" />
+            <input type="button" value="Submit" onclick="validateEmail();" />
         </form>
         
         
         <script type="text/javascript">
         
+            /*
+           var email = document.getElementById("email");
+           
+           console.log(email.id);
+           email.value = "gabriel@gforti.com";
+           email.id = "EMAIL";
+           
+           console.log(email.id);
+           */
+           
+           function validateEmail() {
+               var email = document.getElementById("email");
+               var div = document.getElementById("content");
+               
+               var mystring = "hey@hey.com";
+               
+               if ( email.value.length > 0 &&  email.value.indexOf("@") > 0 ) {
+                   console.log("email is valid");
+                   div.innerHTML = "<strong>Email is valid</strong>";
+                   div.className = "validMsg";
+               } else {
+                   console.log("email is NOT valid");
+                   div.innerHTML = "<strong>Email is <em>NOT</em> valid</strong>";
+                   div.className = "errorMsg";
+               }
+               
+               
+               
+               div.style.borderLeft = "5px solid yellow";
+               
+           }
+           
+           console.log( window );
+           
         </script>
     </body>
 </html>
