@@ -58,11 +58,11 @@ html, body {
 		color: red;
 	}
 	
-	input[type=text].bad {
+	input[type=text].bad, textarea.bad {
 		border: 2px solid red;
 	}
 	
-	input[type=text].good {
+	input[type=text].good, textarea.good {
 		border: 2px solid green;
 	}
         
