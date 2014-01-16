@@ -14,7 +14,7 @@ function submitForm() {
     if ( fullname.value.length > 0 ) {
         fullname.className = "good";
         fullnameErr.innerHTML = "Ok!";
-        fullnameErr.className = "error";
+        fullnameErr.className = "valid";
     } else {
         fullname.className = "bad";
         fullnameErr.innerHTML = "Full name is not entered.";

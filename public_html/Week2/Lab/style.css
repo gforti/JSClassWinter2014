@@ -57,6 +57,9 @@ html, body {
 	.error {
 		color: red;
 	}
+	.valid {
+		color: blue;
+	}
 	
 	input[type=text].bad, textarea.bad {
 		border: 2px solid red;
