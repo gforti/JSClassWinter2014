@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Week 2 Lab</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+    </head>
+    <body>
+        
+    <form name="mainform" id="mainform" action="">
+	<div id="content">
+	<fieldset>
+		<legend>Personal information:</legend>		
+		
+                <label for="name">Name:</label> 
+                <input id="name" name="name" type="text" size="30" placeholder="Full name" /> 
+                <span class="error" id="err_name"></span> <br /><br />
+		
+                <label for="email">E-mail:</label> 
+                <input id="email" name="email" type="text" size="30" placeholder="sample@email.com"  /> 
+                <span class="error" id="err_email"></span> <br /><br />
+		
+                <label for="comments">Comments:</label> 
+                <textarea id="comments" name="comments"></textarea> 
+                <span class="error" id="err_dob"></span> <br /><br />
+		
+		<input type="button" value="submit" onclick="submitForm();" />
+            </fieldset>
+         </div>
+    </form>
+        
+        <script type="text/javascript" src="scripts.js"></script>
+    </body>
+</html>
