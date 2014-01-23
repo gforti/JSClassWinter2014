@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div id="todo">TODO write content</div>
+        
+        <input type="text" name="email" id="Email" value="test@test.com" maxlength="10" />
+        
+        <script type="text/javascript">
+            
+            /*
+            document.title
+            -Sets or returns the title of the document
+
+            document.URL
+            -Returns the full URL of the document
+
+            document.getElementById()
+            -Returns the element that has the ID attribute with the specified value
+
+             document.getElementById().innerHTML
+             -Changes the html content of the Div or Span Object
+            */
+           var todo = document.getElementById("todo");
+           
+           todo.innerHTML = "<strong>Todo Complete</strong>";
+           console.log(todo);
+           
+           
+           document.title = "Title Replaced";
+           console.log(document.URL);
+            
+            /*
+             * Input Object Properties
+
+                -disabled = Sets or returns whether the text field is disabled, or not
+                -name = Sets or returns the value of the name attribute of a text field
+                -type = Returns which type of form element a text field is
+                -value = Sets or returns the value of the value attribute of the text field
+
+             */
+            var email = document.getElementById("Email");
+            
+            console.log(email.value);
+            console.log(email.type);
+            console.log(email.name);
+            console.log(email.disabled);
+            
+            
+            //email.disabled = true;
+            email.readOnly = true;
+            
+            
+            /*
+             * functions
+            -A function is a block of code that will execute when called.
+            -Like variables function are case sensitive.
+            A function can also take arguments.
+            Arguments are values that get passed in and put into a variable.
+            Functions can return a value with the return keyword.  
+            The value that a function returns can be put into another variable.
+
+             */
+            function changePageTitle( title ){
+                document.title = title;
+            }
+            
+            changePageTitle("I passed an argument param");
+            //changePageTitle("I passed another argument param");
+            
+            
+            function isEmailValid( email ) {
+                
+                if ( email.length ) {
+                    return true;
+                }
+                return false;                
+            }
+            
+            var emailValid = isEmailValid(email.value);
+            
+             if ( emailValid ) {
+                todo.innerHTML = "<strong>Email is valid</strong>";
+            } else {
+                todo.innerHTML = "<strong>Email is NOT valid</strong>";
+            }
+            
+            if ( isEmailValid(email.value) ) {
+                todo.innerHTML = "<strong>Email is valid</strong>";
+            } else {
+                todo.innerHTML = "<strong>Email is NOT valid</strong>";
+            }
+            
+            
+            
+            /*
+             * 
+             * Arrays
+
+Arrays index start at 0. 
+Arrays are created like this:
+var myarray = [];
+You can fill data this way:
+myarray[0] = “index0”;
+myarray[1] = “index1”;
+myarray[2] = “index2”;
+
+
+
+When you create the Array object JavaScript adds properties and methods (functions) to the array.
+.Length is a property returns the next index in the array.  
+var myarray = [].
+Console.log( myarray.length ); // will log1 not 0
+.push() is a function that adds to the last index of the array
+myarray.push(“index0”);
+myarray.push(“index1”);
+myarray.push(“index2”);
+
+
+To Access the array you request the index within a bracket.
+Var Myarray = [];
+Myarray.push(“index0”);
+Myarray.push(“index1”);
+Myarray.push(“index2”);
+
+Console.log(Myarray[1]);
+
+You can also change the array index with the same way you access it.
+Myarray[1] = “I changed this array”;
+
+
+Best way to access all the array items is with a for loop.
+var myarray = [];
+Myarray.push(“index0”) … etc
+
+For ( var I = 0; I < myarray.length; I++ ) {
+	console.log (myarray[i]);
+}
+
+
+push()
+Adds new elements to the end of an array, and returns the new length
+
+reverse()
+Reverses the order of the elements in an array
+
+sort()
+Sorts the elements of an 
+
+join()
+Joins all elements of an array into a string
+             */
+            var arr = [];
+            arr[0] = "hi0";
+            arr[1] = true;
+            arr[2] = 2;
+            arr.length;
+            arr[arr.length] = "three";
+            
+            arr.push(false);
+            arr.push(9);
+            
+            arr.reverse();
+            arr.sort();
+            
+            console.log(arr[3]);
+            console.log(arr.length);
+            
+            for ( var i = 0, l = arr.length; i < l; i++ ) {
+                console.log(arr[i]);
+            }
+            
+            
+            
+            var cars = ["ford", "honda", "toyota"];
+            
+            console.log(cars);
+            
+            console.log(cars.join("</li><li>"));
+            
+            
+            
+            
+            
+            
+        </script>
+    </body>
+</html>
