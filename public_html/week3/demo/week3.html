@@ -106,58 +106,58 @@ and open the template in the editor.
              * 
              * Arrays
 
-Arrays index start at 0. 
-Arrays are created like this:
-var myarray = [];
-You can fill data this way:
-myarray[0] = “index0”;
-myarray[1] = “index1”;
-myarray[2] = “index2”;
+            Arrays index start at 0. 
+            Arrays are created like this:
+            var myarray = [];
+            You can fill data this way:
+            myarray[0] = “index0”;
+            myarray[1] = “index1”;
+            myarray[2] = “index2”;
 
 
 
-When you create the Array object JavaScript adds properties and methods (functions) to the array.
-.Length is a property returns the next index in the array.  
-var myarray = [].
-Console.log( myarray.length ); // will log1 not 0
-.push() is a function that adds to the last index of the array
-myarray.push(“index0”);
-myarray.push(“index1”);
-myarray.push(“index2”);
+            When you create the Array object JavaScript adds properties and methods (functions) to the array.
+            .Length is a property returns the next index in the array.  
+            var myarray = [].
+            Console.log( myarray.length ); // will log1 not 0
+            .push() is a function that adds to the last index of the array
+            myarray.push(“index0”);
+            myarray.push(“index1”);
+            myarray.push(“index2”);
 
 
-To Access the array you request the index within a bracket.
-Var Myarray = [];
-Myarray.push(“index0”);
-Myarray.push(“index1”);
-Myarray.push(“index2”);
+            To Access the array you request the index within a bracket.
+            Var Myarray = [];
+            Myarray.push(“index0”);
+            Myarray.push(“index1”);
+            Myarray.push(“index2”);
 
-Console.log(Myarray[1]);
+            Console.log(Myarray[1]);
 
-You can also change the array index with the same way you access it.
-Myarray[1] = “I changed this array”;
-
-
-Best way to access all the array items is with a for loop.
-var myarray = [];
-Myarray.push(“index0”) … etc
-
-For ( var I = 0; I < myarray.length; I++ ) {
-	console.log (myarray[i]);
-}
+            You can also change the array index with the same way you access it.
+            Myarray[1] = “I changed this array”;
 
 
-push()
-Adds new elements to the end of an array, and returns the new length
+            Best way to access all the array items is with a for loop.
+            var myarray = [];
+            Myarray.push(“index0”) … etc
 
-reverse()
-Reverses the order of the elements in an array
+            For ( var I = 0; I < myarray.length; I++ ) {
+                    console.log (myarray[i]);
+            }
 
-sort()
-Sorts the elements of an 
 
-join()
-Joins all elements of an array into a string
+            push()
+            Adds new elements to the end of an array, and returns the new length
+
+            reverse()
+            Reverses the order of the elements in an array
+
+            sort()
+            Sorts the elements of an 
+
+            join()
+            Joins all elements of an array into a string
              */
             var arr = [];
             arr[0] = "hi0";
@@ -190,8 +190,121 @@ Joins all elements of an array into a string
             
             
             
+            /*
+             * JSON
+
+                JSON does not have the functions that Arrays have.
+                A JSON object is a variable that holds other variables with information.
+                Var myJSON = {}
+                Myjson[“hi”] = “this is a JavaScript object notation”;
+                This is a good way to hold information and then access it.
+                Each variable can hold any data type.
+
+
+                You can also declare all the data when declaring the JSON object. Use commans to separate the data.  The last item should not have a comma.
+                Var myjson = { 
+                ‘hi’ : “this is cool” , 
+                ‘another’ : true
+                 };
+
+                This type of data is also known as a key:value
+             */
+            
+            var json = {};
+            
+            json["car"] = "ford";
+            
+            console.log(json.car);
             
             
+            var json2 = {
+                "car1" : "ford",
+                "car2" : "ford2",
+                "car3" : "ford3"
+            };
+            
+            
+            console.log(document.title);
+            console.log(document['title']);
+            
+            console.log(json2["car2"]);
+            console.log(json2.car2);
+            
+            for ( var x in json2 ) {
+                console.log(json2[x]);
+            }
+            
+            
+            var collection = [];
+            
+            collection.push({ "make" : 'ford', "year" : '2005'});
+            collection.push({ "make" : 'honda', "year" : '2009'});
+            collection.push({ "make" : 'toyota', "year" : '2007'});
+            
+            collection[0] = {
+                "make" : 'ford',
+                "year" : '2005'
+            };
+            
+            
+             for ( var i = 0, l = collection.length; i < l; i++ ) {
+                console.log(collection[i]["make"] + " " + collection[i]["year"]);
+                
+            }
+            
+            
+            
+            /*
+             * MATH
+
+                In JS there is a global MATH object.  It has basic math functions that can be used.
+
+                var PI = Math.PI; // Returns PI
+                var Squareroot = Math.sqrt(16); // Returns the square root of 16
+                var round = Math.round(2.5);  // 3
+
+                Use the Keyword Math to access the properties and methods.
+
+
+                Math.random()
+                It will return a number between 0 and 1.
+                The result is a float and when called could be : 0.75945417252877077 
+                Just a note, all JS numbers are floats.
+                You can use Math.random() to get a number between 1-10 like so.
+                var one_ten = ( Math.random()*10+1);
+                You still get a float so to remove it use the Math.floor() method(function).
+                var one_ten = Math.floor ( Math.random()*10+1);
+
+
+                ceil(x)
+                Returns x, rounded upwards to the nearest integer
+
+                floor(x)
+                Returns x, rounded downwards to the nearest integer
+
+                max(x,y,z,...,n)
+                Returns the number with the highest value
+                min(x,y,z,...,n)
+                Returns the number with the lowest value
+
+                random()
+                Returns a random number between 0 and 1
+
+                round(x)
+                Rounds x to the nearest integer
+
+             */
+            
+            
+            console.clear();
+           console.log(Math.random());
+           console.log(Math.round(1.6));
+           console.log(( Math.random()*10+1));
+           console.log(( Math.random()*10+1));
+           console.log(( Math.random()*10+1));
+           console.log(Math.floor( Math.random()*10+1));
+           
+           
         </script>
     </body>
 </html>
