@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Local Storage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        
+        
+        <form name="mainform" id="mainform" action="">
+	<div id="content">
+	<fieldset>
+		<legend>Personal information:</legend>		
+		
+                <label for="name">Name:</label> 
+                <input id="name" name="name" type="text" size="30" placeholder="Full name" /> 
+                
+                <label for="email">E-mail:</label> 
+                <input id="email" name="email" type="text" size="30" placeholder="sample@email.com"  /> 
+                
+		<input type="button" value="Save Data" onclick="saveForm();" />
+            </fieldset>
+         </div>
+    </form>
+        
+        <br />
+        
+        <input type="button" value="CSV Data" onclick="getDatainCSVFormat();" />
+        <input type="button" value="Clear All CSV Data" onclick="cleanLocalStorage();" />
+        <br />
+        <textarea id="results" cols="100" rows="8"></textarea>
+        
+        
+        <script type="text/javascript">
+            
+            function saveForm(){
+                var time = getCurrentTime(),
+                    name = document.getElementById("name"),
+                    email = document.getElementById("email");
+            console.log(time);
+                    
+                localStorage.setItem("email_"+time, email.value);
+                localStorage.setItem("name_"+time, name.value);
+                
+                name.value = "";
+                email.value = "";
+            }
+            
+            function getUID(){
+                return Math.random().toString(36).substr(2,9);
+            }
+            
+            function getCurrentTime(){
+                return new Date().getTime();
+            }
+            
+            function getStorageTimes() {
+                var times = [], time;
+                for ( var x in localStorage ) { 
+                    time = Number(x.split("_")[1]);
+                    if ( times.indexOf(time) == -1)
+                        times.push(Number(x.split("_")[1]));
+                 }
+                 return times;
+            }
+           
+            function getDatainCSVFormat() {
+                var csvtxt = document.getElementById("results"),                    
+                    times = getStorageTimes();
+                 csvtxt.value = "Time,Name,Email\n";
+                 
+                for ( var i = 0, l = times.length; i < l; i++ ) {                   
+                    csvtxt.value += new Date(times[i])+ ","+ localStorage.getItem("name_"+times[i]) + "," + localStorage.getItem("email_"+times[i]) + "\n";
+                }
+            }
+          
+          
+            function cleanLocalStorage() {
+                var doClear = confirm("Are you sure you want to delete all the Data?");
+                if (doClear === true) {
+                      localStorage.clear();
+                  }
+            }
+           
+            
+            
+            
+        </script>
+        
+    </body>
+</html>
