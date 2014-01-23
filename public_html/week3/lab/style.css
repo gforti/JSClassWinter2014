@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 15, 2014, 7:02:12 PM
+    Author     : GFORTI
+*/
+@keyframes slidein {
+    from {
+          font-size:1em;
+          opacity: .1;
+
+    }
+
+    to {
+          font-size:2em;
+          opacity: 1;
+
+    }
+  }
+
+  #ad {
+
+    border-radius: 10px; 
+    box-shadow: 2px 2px 2px 2px #000; 
+    background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); 
+
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    border: 1px solid black;
+    font-size: 1em;
+    width: 500px;
+    height: 80px;
+
+  }
