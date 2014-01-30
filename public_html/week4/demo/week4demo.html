@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            
+            div {
+                border: 1px solid blue;
+                padding: 1em;
+                font-size: 1em;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="test">TODO write content</div>
+        
+        
+        <input type="button" id="showResults" value="Show Results" />
+
+        
+        
+        <script type="text/javascript">
+            
+             function callMe( msg ){                
+                var msg = msg || 'default';               
+                alert(msg);                
+            }
+            
+            callMe();
+            
+            
+            var arr = [];
+            
+            arr.push(1);
+            arr.push(22);
+            
+            console.log(arr.length);
+            
+            //var json = new Object(); same as
+            var json = {};
+            
+            json['car'] = 'ford';
+            
+            //json.car or json['car']
+            
+            
+            /*
+            An event is an action triggered by the user on the page.
+            There are different level of events. 
+            Form
+            Mouse
+            window
+            Input/keyboard
+            JavaScript knows what event is triggered and what DOM object is affected as the target.
+
+        */
+       
+       
+       
+       
+       /*
+        * 
+        * 
+        * To use events in JS, we must attach the event to a DOM Object.
+The function that JS adds to all Dom Objects is called addEventListener
+So that means that all elements, the document and window object can be an event target.
+
+target.addEventListener(type, function);
+        */
+       
+       
+       
+       
+       /*
+        * 
+        * Page/window Events
+
+onload -The event occurs when a document or <object> has been loaded
+
+onresize -The event occurs when a document view is resized
+
+onscroll -The event occurs when a document view is scrolled
+        * 
+        */
+       
+        function changebg() {
+            
+            document.body.style.backgroundColor = 'black';
+        }
+        
+        function changcolor() {
+            
+            document.body.style.color = 'white';
+        }
+            
+           // window.addEventListener('load', changebg);
+            window.addEventListener('resize', changebg);
+            window.addEventListener('resize', changcolor);
+            
+            
+            
+            
+            /*
+             * 
+             * Mouse Events
+onclick - The event occurs when the user clicks on an element
+
+onmousedown -The event occurs when a user presses a mouse button over an element
+
+onmousemove -The event occurs when the pointer is moving while it is over an element
+
+onmouseover -The event occurs when the pointer is moved onto an element
+
+onmouseout -The event occurs when a user moves the mouse pointer out of an element
+
+onmouseup -The event occurs when a user releases a mouse button over an element
+             */
+            
+            
+        function changebg2() {
+            
+            if (  document.body.style.backgroundColor === 'black' ) {
+                 document.body.style.backgroundColor = 'white';
+            } else {
+            document.body.style.backgroundColor = 'black';
+         }
+        }
+            
+            document.addEventListener('click', changebg2);
+            
+           
+    var div = document.getElementById('test');
+    
+    div.addEventListener('mouseover', changebg2);
+            
+            
+            
+    /*
+     * Form Events
+
+onblur -The event occurs when a form element loses focus
+
+onchange -The event occurs when the content of a form element, the selection, or the checked state have changed (for <input>, <select>, and <textarea>)
+
+ onfocus -The event occurs when an element gets focus (for <label>, <input>, <select>, textarea>, and <button>)
+onsubmit - The event occurs when a form is submitted
+
+     */
+            
+            
+            
+            
+            /*
+             * 
+             * Input/keyboard Events
+
+onkeydown -The event occurs when the user is pressing a key
+onkeyup -The event occurs when the user releases a key
+
+             */
+            
+            
+            function hello(e) {
+                console.log(e.clientX);
+            }
+            
+            
+         document.addEventListener('load', hello);   
+
+   window.removeEventListener('resize', changebg);
+            
+            
+            
+            
+       var data = {
+		"title" : "",
+		"mousex" : [],
+		"name" : ""
+	};
+        
+               
+        
+        function onMouseMove(e){
+		data.mousex.push(e.clientX);
+		//e.clientY;
+		
+		if ( data.mousex.length > 100 ) {
+			document.removeEventListener('mousemove', onMouseMove);
+		}
+	}
+	
+	document.addEventListener('mousemove', onMouseMove);
+            
+            
+            
+        function showResults() {
+		console.clear();
+		console.log(data);
+	}
+	
+	var results = document.getElementById('showResults');
+	
+	results.addEventListener("click", showResults);
+            
+            
+        </script>
+    </body>
+</html>
