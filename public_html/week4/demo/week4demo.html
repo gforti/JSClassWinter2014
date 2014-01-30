@@ -52,44 +52,44 @@ and open the template in the editor.
             //json.car or json['car']
             
             
-            /*
-            An event is an action triggered by the user on the page.
-            There are different level of events. 
-            Form
-            Mouse
-            window
-            Input/keyboard
-            JavaScript knows what event is triggered and what DOM object is affected as the target.
+/*
+An event is an action triggered by the user on the page.
+There are different level of events. 
+Form
+Mouse
+window
+Input/keyboard
+JavaScript knows what event is triggered and what DOM object is affected as the target.
 
-        */
+*/
        
        
        
        
-       /*
-        * 
-        * 
-        * To use events in JS, we must attach the event to a DOM Object.
+/*
+ * 
+ * 
+ * To use events in JS, we must attach the event to a DOM Object.
 The function that JS adds to all Dom Objects is called addEventListener
 So that means that all elements, the document and window object can be an event target.
 
 target.addEventListener(type, function);
-        */
+ */
+
        
        
        
-       
-       /*
-        * 
-        * Page/window Events
+/*
+ * 
+ * Page/window Events
 
 onload -The event occurs when a document or <object> has been loaded
 
 onresize -The event occurs when a document view is resized
 
 onscroll -The event occurs when a document view is scrolled
-        * 
-        */
+ * 
+ */
        
         function changebg() {
             
@@ -108,9 +108,9 @@ onscroll -The event occurs when a document view is scrolled
             
             
             
-            /*
-             * 
-             * Mouse Events
+/*
+ * 
+ * Mouse Events
 onclick - The event occurs when the user clicks on an element
 
 onmousedown -The event occurs when a user presses a mouse button over an element
@@ -122,7 +122,7 @@ onmouseover -The event occurs when the pointer is moved onto an element
 onmouseout -The event occurs when a user moves the mouse pointer out of an element
 
 onmouseup -The event occurs when a user releases a mouse button over an element
-             */
+ */
             
             
         function changebg2() {
@@ -143,29 +143,29 @@ onmouseup -The event occurs when a user releases a mouse button over an element
             
             
             
-    /*
-     * Form Events
+/*
+ * Form Events
 
 onblur -The event occurs when a form element loses focus
 
 onchange -The event occurs when the content of a form element, the selection, or the checked state have changed (for <input>, <select>, and <textarea>)
 
- onfocus -The event occurs when an element gets focus (for <label>, <input>, <select>, textarea>, and <button>)
+onfocus -The event occurs when an element gets focus (for <label>, <input>, <select>, textarea>, and <button>)
 onsubmit - The event occurs when a form is submitted
 
-     */
+ */
             
             
             
             
-            /*
-             * 
-             * Input/keyboard Events
+/*
+ * 
+ * Input/keyboard Events
 
 onkeydown -The event occurs when the user is pressing a key
 onkeyup -The event occurs when the user releases a key
 
-             */
+ */
             
             
             function hello(e) {
@@ -209,7 +209,66 @@ onkeyup -The event occurs when the user releases a key
 	var results = document.getElementById('showResults');
 	
 	results.addEventListener("click", showResults);
-            
+   
+    
+    /*
+     * 
+When putting the type argument, you do not need the 'on'[event]. E.g. onload should be passed as load.
+
+Window.addEventListener('load', [function name]);
+
+document.addEventListener('mousemove', [function name]);
+
+var el = document.getElementById("email");
+el.addEventListener('blur', [function name]);
+
+
+The second argument must be a function object, no qoutes around it.
+
+function hello() {
+	console.log('hello');
+}
+
+window.addEventListener('load', hello);
+
+
+
+
+Every event listener that runs passes an event object to the function it calls.
+
+function hello(e) {
+	console.log(e);
+}
+
+window.addEventListener('load', hello);
+
+
+
+
+
+The Event listener object also has information about the target
+Depending on the event target, different information is given,
+Window, document, other Dom Objects
+
+function hello(e) {
+	console.log(e.type);
+}
+
+window.addEventListener('load', hello);
+
+
+
+
+To remove an event listener you can use the removeEventListener function.  It works the same way as adding one.
+
+target.removeEventListener(type, function);
+
+Function hello(e) {
+	console.log(e);
+}
+
+Window.removeEventListener(“load”, hello);
+     */
             
         </script>
     </body>
