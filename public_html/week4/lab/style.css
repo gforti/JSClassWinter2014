@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 29, 2014, 7:03:17 PM
+    Author     : GFORTI
+*/
+
+html, body {
+        font-size: 120%;
+}
+
+label {
+        font-weight: bold;
+        font-size: 130%;
+}
+
+#content {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+input {
+        font-size: 120%;
+
+}
+
+input[type=button] {
+        border: 1px solid #6E329D;
+        border-radius : 25px;
+        color: #fff;
+        text-decoration: none;
+        padding: 0.2em 0.5em;
+        margin: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+
+        background: linear-gradient(to bottom, #e570e7 0%,#c85ec7 47%,#a849a3 100%); /* W3C */
+}
+
+input[type=text] {
+        border: 2px solid lightblue;
+}
+
+input[type=button]:hover {
+        background: linear-gradient(to right, #e570e7 0%,#c85ec7 47%,#a849a3 100%); /* W3C */	
+}
+
+input[type=text]:hover {
+        background-color: #e9f6fd;
+}
+
