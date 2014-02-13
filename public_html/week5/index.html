@@ -17,7 +17,33 @@ and open the template in the editor.
         <script type="text/javascript">
             
             var myString = "Hello@";
+                       
             
+            myString = myString.toLowerCase();
+            
+             console.log(myString);
+             
+             console.log(myString.toUpperCase());
+             
+             console.log(myString.indexOf("@"));
+            
+            
+             if ( myString.indexOf("@") > -1 ) {
+                console.log("Found it @");
+            } else {
+                console.log("Did not find it @");
+            }
+            
+             var str = 'don\'t';
+             
+             var str2 = 'she don\'t said "Go Home" ';
+             
+             str.replace("'", "\'");
+             
+            console.log(str);
+            console.log(str2);
+            
+            /*
             myString = myString.toLowerCase();
             
             console.log(myString);
@@ -46,7 +72,13 @@ and open the template in the editor.
            
            var str = 'don\'t';
                     
+            */
+           
+           var myreg = /[0-9]/;
+           
+            console.log(myreg.test("HELLO0900"));
             
+           
         </script>
         
     </body>
