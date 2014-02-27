@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div id="mydiv" class="divclass">TODO write content</div>
+        <div id="mydiv2" class="divclass">TODO write content</div>
+        <div id="mydiv3" class="divclass">TODO write content</div>
+        
+        
+        <button id="toggle">Toggle</button>
+        
+        <script type="text/javascript" src="jquery.js"></script>
+        
+        <script type="text/javascript">
+            
+            $("div");  // getElementsByTagName 
+            $("#mydiv,#mydiv2"); //ID
+            $(".divclass"); // get by class
+            
+            // change all 3 divs to be the color blue;
+            // no need to loop, will do it for you
+            $("#mydiv,#mydiv2,#mydiv3").css( "color", "blue");  
+           
+            // tradtional way to make function, global
+           function ToggleDiv(){
+                 $("#mydiv,#mydiv2,#mydiv3").toggle("slow");
+            }
+            
+            // varable way to make function, not global (cannot use function before being declared)
+            var ToggleDiv = function() {
+                 $("#mydiv,#mydiv2,#mydiv3").toggle("slow");
+            };
+           
+           // pass function variable for use on click
+            $("#toggle").click(ToggleDiv);
+            
+            
+            // this is referenced to the first selector of #toggle
+             $("#toggle").click(function(){
+                 $(this).toggle("slow").toggle("slow");
+             });
+            
+            
+            /* 
+             * Anonymous  function use
+             */
+            
+             $("#toggle").click(function() {
+                 $("#mydiv,#mydiv2,#mydiv3").toggle("slow");
+            });
+         
+            
+            /*
+             * if you had to write the function without the framework, will take more time
+             * 
+                function toggleDiv() {
+                    var div = document.getElementsByTagName('div');
+                    var len = div.length;
+                    while ( len-- ) {
+                        div[len].style.display = ( div[len].style.display == 'block' : 'none' : 'block' );
+                    }
+                }
+          */
+            
+        </script>
+    </body>
+</html>
