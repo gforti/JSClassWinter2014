@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div id="time"></div>
+        
+        
+        <h1 id="counter"></h1>
+        
+        <script type="text/javascript">
+            
+            /*
+             * 
+             *  setTimeout
+                    executes a function, once, after waiting a specified number of milliseconds
+                setInterval
+                    executes a function, over and over again, at specified time intervals
+                clearTimeout
+                    Used to stop the execution of setTimeout
+                clearInterval
+                    Used to stop the execution of setInterval
+                    These timers are part of the window object.
+
+             */
+            
+            
+          /*
+            var timeDiv = document.getElementById('time');
+            
+            
+            function updateTime() {
+                  var time = new Date();
+                timeDiv.innerHTML = time;
+            }
+            
+            var timer = setInterval(updateTime, 1000);
+    
+    */
+            /***************************/
+            
+            
+           window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                              window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+            
+    
+    
+            var h1 = document.getElementById('counter');
+            var count = 1000;
+            
+            var time = new Date();
+            
+          requestAnimationFrame(updateTime);
+            
+            function updateTime() {
+                  
+                if ( count % 100 == 0 )
+                    h1.innerHTML = count;
+                count--;
+                
+                if ( count >= 0) {
+                  requestAnimationFrame(updateTime);
+                }
+                
+            }    
+            
+            
+          
+          
+          var colors = ['red', 'green', 'blue', 'black'];
+          var colorcount = 0;
+          var colortimer =  setTimeout(updateColor, 1000);
+          function updateColor() {
+                  
+               
+                h1.style.color = colors[colorcount];
+                //style.background-color - incorrect CSS styles in JS are camelcase
+                //style.backgroundColor - correct
+                colorcount++;
+                
+                if ( colorcount <= 3) {
+                  setTimeout(updateColor, 1000);
+                } else {
+                    clearTimeout(colortimer);
+                }
+                
+            }    
+            
+           
+            
+        </script>
+            
+    </body>
+</html>

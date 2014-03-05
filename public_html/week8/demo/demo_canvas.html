@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        
+        <style type="text/css">
+            canvas {
+                border: 1px solid black;
+            }
+            </style>
+    </head>
+    <body>
+        <canvas id="tutorial" width="250" height="150"></canvas>
+        
+        <script type="text/javascript">
+            
+            var can = document.getElementById('tutorial');
+            var ctx = can.getContext('2d');
+            
+            var x = 0;
+           var w = 50;
+            function movecanvas(){
+                x++;
+                w++;
+                 ctx.fillRect(x,25,w,50);
+                 
+                 if ( x < can.width-100) {
+                     x++;
+                 }
+                
+            }
+            
+            setInterval(movecanvas, 50);
+            
+            
+                //ctx.strokeRect(50,50,50,50);
+            
+            </script>
+    </body>
+</html>
