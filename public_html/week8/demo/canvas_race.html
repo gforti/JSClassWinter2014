@@ -18,33 +18,65 @@ and open the template in the editor.
     </head>
     <body>
          <canvas id="race" width="750" height="150"></canvas>
-        
+         <button id="replay">Replay</button>
         <script>
             
-             var can = document.getElementById('race');
+            var can = document.getElementById('race');
+            var replayBtn = document.getElementById('replay');
             var ctx = can.getContext('2d');
             
             var x1 = 0;
             var x2 = 0;
             
+            
+           replayBtn.addEventListener('click',replay,false);
+            
+            function replay() {
+                x1 = 0;
+                x2 = 0;
+                setTimeout(movecanvas, 100);
+                replayBtn.style.display = 'none';
+            }
+            
              function movecanvas(){
                
                ctx.clearRect(0,0,can.width,can.height);
+               
+                ctx.beginPath();
+                ctx.moveTo(can.width-100, 0);
+                ctx.lineTo(can.width-100, 150);
+                ctx.stroke();
+               
+               
                ctx.fillStyle="red";
                ctx.fillRect(x1,25,50,25);
                
-               ctx.fillStyle="#336699";
+               ctx.fillStyle="blue";
                ctx.fillRect(x2,75,50,25);
-                 var w = parseInt(can.width-100,10);
+                 var w = parseInt(can.width-150,10);
+                 var max = 20;
                  if ( x1 < w && x2 < w) {
-                     x1+=randNum(10);
-                     x2+=randNum(10);
+                     
+                     x1+=randNum(max);
+                     x2+=randNum(max);
                      setTimeout(movecanvas, 100);
+                 } else {
+                      ctx.font="20px Georgia";
+                         ctx.fillStyle="black";
+                        ctx.fillText("Winner!",10,50);
+                     if ( x1 >= w) {                       
+                        ctx.fillStyle="red";
+                         ctx.fillText("Red",10,80);
+                     }else if ( x2 >= w) {                       
+                        ctx.fillStyle="blue";
+                         ctx.fillText("Blue",10,80);
+                     }
+                     replayBtn.style.display = 'block';
                  }
                 
             }
             
-            setTimeout(movecanvas, 100);
+            replay();
             
              function randNum(max) {
                return Math.ceil(Math.random()*max) + 1;
