@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        
+         <style type="text/css">
+            canvas {
+                border: 1px solid black;
+            }
+            </style>
+    </head>
+    <body>
+         <canvas id="race" width="750" height="150"></canvas>
+        
+        <script>
+            
+             var can = document.getElementById('race');
+            var ctx = can.getContext('2d');
+            
+            var x1 = 0;
+            var x2 = 0;
+            
+             function movecanvas(){
+               
+               ctx.clearRect(0,0,can.width,can.height);
+               ctx.fillStyle="red";
+               ctx.fillRect(x1,25,50,25);
+               
+               ctx.fillStyle="#336699";
+               ctx.fillRect(x2,75,50,25);
+                 var w = parseInt(can.width-100,10);
+                 if ( x1 < w && x2 < w) {
+                     x1+=randNum(10);
+                     x2+=randNum(10);
+                     setTimeout(movecanvas, 100);
+                 }
+                
+            }
+            
+            setTimeout(movecanvas, 100);
+            
+             function randNum(max) {
+               return Math.ceil(Math.random()*max) + 1;
+           }
+            </script>
+    </body>
+</html>
