@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div id="test">TODO write content</div>
+        
+        <script type="text/javascript">
+            
+           
+            function Module(elem){
+                if ( typeof elem[0] === 'string')
+                    this.element = document.getElementById(elem[0]);
+                return this;
+            }
+           
+           
+           Module.prototype.setStyle = function(prop, val){
+               this.element.style[prop] = val;             
+               return this;
+            };
+            
+           Module.prototype.on = function(type, fn){
+               this.element.addEventListener(type, fn, false);
+               return this;
+           };
+            
+            /*
+             * When you pass 'test' to $ it passes arguments to Module
+             * in turn arguments is a JavaScript Keyword that stores all
+             * params into an array.
+             * In the Module function above it pass the arguments
+             * and we are only using the first array item in 
+             * elem to set the element we want to use.
+             */
+            window.$ =function() {
+                return new Module(arguments);
+            };
+            
+            
+            $('test').on('click', function(){$('test').setStyle('color', 'red');} );
+           
+        // var hey = $('test').on('click', function(){ hey.setStyle('color', 'red'); } );
+             
+            
+        </script>
+        
+    </body>
+</html>

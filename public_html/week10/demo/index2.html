@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+         <script type="text/javascript">
+             
+             
+               function Module(els){
+                this.elements = [];
+                
+                 for (var i=0; i<els.length; i++) {
+
+                    var element = els[i];
+
+                    if (typeof element === 'string') {
+                      element = document.getElementById(element);
+                    }
+                    if (element) this.elements.push(element);
+                    element = null;
+                  }
+
+                  return this;
+            }
+            
+            Module.prototype = {
+                "each" : function(fn) {
+                    return this;
+                },
+                "setStyle" : function (prop, val) {
+                    
+                    return this;
+                }
+                
+                
+                
+            };
+            
+             
+             
+         </script>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div id='test1'>TODO write content1</div>
+        <div id='test2'>TODO write content2</div>
+        
+        <script type="text/javascript">
+            
+            
+            function Module(els){
+                this.elements = [];
+                
+                 for (var i=0; i<els.length; i++) {
+
+                    var element = els[i];
+
+                    if (typeof element === 'string') {
+                      element = document.getElementById(element);
+                    }
+                    if (element) this.elements.push(element);
+                    element = null;
+                  }
+
+                  return this;
+            }
+            
+           
+            
+            Module.prototype.setStyle = function(prop, val){
+              
+              var setElemStyle = function(el) {
+                   el.style[prop] = val;
+              };
+              
+               this.each(setElemStyle);
+               
+               return this;
+            };
+            
+             Module.prototype.each = function(fn){
+               var i=  this.elements.length;
+               
+               while ( i-- ) {
+                   fn(this.elements[i]);
+               }
+               return this;
+            };
+            
+            Module.prototype.isString = function(){
+                return typeof this.elements[0];
+        
+    }
+            Module.prototype.on = function(type, fn){
+               var listen = function(el) {
+                    el.addEventListener(type, fn, false);
+               };
+               
+                this.each(listen);
+                
+                return this;
+            };
+            
+            
+            window.$ =function() {
+                return new Module(arguments);
+            };
+            
+            
+            var jfjf = $('test1','test2').setStyle('color', 'blue').setStyle('border', '2px solid green');
+            $('test2').on('click', function(){$('test2').setStyle('color', 'red');});
+                
+           
+           
+           
+           function a() {
+                var that = this; // make A global for this inner function
+                function b() {
+                    that;// reference A
+                }
+                
+            }
+            
+            
+        </script>
+        
+    </body>
+</html>
