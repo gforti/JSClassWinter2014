@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script type="text/javascript">
+        
+        /*
+            function validate(){
+                
+            }
+            
+            
+            var validator = {};
+            
+            validator.email = function(email) {
+                return email.length;
+            };
+            
+            validator.name = function(name) {
+                return name.length;
+            };
+            
+            console.log(validator);
+            
+            var name = "testing";
+            if ( validator.name(name) ) {
+                console.log('name is valid');
+            } else {
+                console.log('name is NOT valid');
+            }
+            
+            */
+            
+             /*
+            function validator(){
+                
+                
+                // private Methods
+                
+                var methods = {                    
+                    "checkLength" : function(str) {
+                       return ( typeof(str) === 'string' && str.length > 0);
+                    }
+                };
+                
+                
+                return {
+                   "email" : function(email) {
+                        return methods.checkLength(email);
+                    },
+                    "name" : function(name) {
+                        return methods.checkLength(name);
+                    }
+                };
+                
+            }
+            
+            
+            var vali = validator;
+            
+            console.log(vali);
+            
+           */
+           
+          
+           function validator(){}
+           
+           
+            validator.prototype.email = function(str){
+                return ( typeof(str) === 'string' && str.length > 0);
+            };
+            
+             validator.prototype.name = function(str){
+                return ( typeof(str) === 'string' && str.length > 0);
+            };
+            
+            var vali = new validator();
+            
+            console.log(vali.email('test'));
+            
+        </script>
+    </body>
+</html>
